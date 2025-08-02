@@ -6,6 +6,4 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8000
-
-CMD ["python", "server.py"]
+CMD ["waitress-serve", "--host=0.0.0.0", "--port=${PORT}", "server:app"]
