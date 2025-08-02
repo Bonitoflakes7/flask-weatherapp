@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 from weather import getcurrentweather
 from waitress import serve
+import os
 
 app=Flask(__name__)
 @app.route('/')
@@ -29,4 +30,6 @@ def get_weather():
 
 
 if __name__=="__main__":
+    port = int(os.environ.get("PORT", 8000))
     serve(app,host="0.0.0.0", port=8000)
+   
