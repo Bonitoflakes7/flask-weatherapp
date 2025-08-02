@@ -6,4 +6,6 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["waitress-serve", "--host=0.0.0.0", "--port=${PORT}", "server:app"]
+
+CMD waitress-serve --host=0.0.0.0 --port=${PORT} server:app
+
